@@ -30,6 +30,7 @@ public class AddTaskServlet extends HttpServlet {
         String description = request.getParameter("description");
         String deadline = request.getParameter("deadline");
 
+        response.setContentType("text/xml");
         List<Task> tasks = (List<Task>) getServletContext().getAttribute("taskList");
         System.out.println(title);
         Task newTask = new Task(title, description, deadline);
